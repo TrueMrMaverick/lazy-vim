@@ -26,5 +26,11 @@ return {
         end,
       },
     },
+    {
+      "folke/which-key.nvim",
+      opts = {
+        preset = "modern",
+      },
+    },
   },
 }
