@@ -12,6 +12,14 @@ return {
               useFlatConfig = true,
             },
           },
+          -- keys = {
+          --   {
+          --
+          --     "<leader>cT",
+          --     "<cmd>EslintFixAll<CR>",
+          --     desc = "Fix all eslint issues",
+          --   },
+          -- },
         },
       },
       setup = {
@@ -33,4 +41,17 @@ return {
       },
     },
   },
+  {
+
+    "neovim/nvim-lspconfig",
+    opts = function()
+      local keys = require("lazyvim.plugins.lsp.keymaps").get()
+      keys[#keys + 1] = {
+
+              "<leader>cL",
+              "<cmd>EslintFixAll<CR>",
+              desc = "Fix all eslint issues",
+            }
+    end,
+  }
 }
